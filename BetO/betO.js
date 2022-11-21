@@ -83,22 +83,22 @@ function render() {
 function renderDice() {
     
     if (dice == 1) {
-        dicepic.innerHTML += `<img src="img/s1.png" class="pics">`
+        dicepic.innerHTML += `<img src="img/s1.PNG" class="pics">`
     } 
     else if (dice == 2) {
-        dicepic.innerHTML += `<img src="img/s2.png" class="pics">`
+        dicepic.innerHTML += `<img src="img/s2.PNG" class="pics">`
     }
     else if (dice == 3) {
-        dicepic.innerHTML += `<img src="img/s3.png" class="pics">`
+        dicepic.innerHTML += `<img src="img/s3.PNG" class="pics">`
     }
     else if (dice == 4) {
-        dicepic.innerHTML += `<img src="img/s4.png" class="pics">`
+        dicepic.innerHTML += `<img src="img/s4.PNG" class="pics">`
     }
     else if (dice == 5) {
-        dicepic.innerHTML += `<img src="img/s5.png" class="pics">`
+        dicepic.innerHTML += `<img src="img/s5.PNG" class="pics">`
     }
     else if (dice == 6) {
-        dicepic.innerHTML += `<img src="./s6.png" class="pics">`
+        dicepic.innerHTML += `<img src="./s6.PNG" class="pics">`
     } 
 }
 
