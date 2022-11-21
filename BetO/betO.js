@@ -77,8 +77,6 @@ play.addEventListener("click", function(){
 function render() {
     th.textContent = `Credits: $${credit}`
     msg.textContent = message
-    range.max = credit
-    inp.max = credit
 
 }
 

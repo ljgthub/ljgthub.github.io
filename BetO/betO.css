@@ -19,6 +19,7 @@ h1 {
     color: goldenrod;
     font-weight: bolder;
     font-size: 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 button {
     width: 220px;
