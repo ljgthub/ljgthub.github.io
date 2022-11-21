@@ -98,7 +98,7 @@ function renderDice() {
         dicepic.innerHTML += `<img src="img/s5.PNG" class="pics">`
     }
     else if (dice == 6) {
-        dicepic.innerHTML += `<img src="./s6.PNG" class="pics">`
+        dicepic.innerHTML += `<img src="img/s6.PNG" class="pics">`
     } 
 }
 
