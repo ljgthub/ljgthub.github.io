@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet"></link>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div class="container">
+        <form autocomplete="off"> 
+            <div class="done_container" autoS>
+                <label for="target">Target: </label>
+                <input class="input" id="target" type="number" inputMode="numeric" pattern="[0-9]*"/> 
+            </div>
+
+            <div class="pattern_container">
+                <label>Pattern: </label><input class="input" id="pattern">
+            </div>
+            <div calss="bet_container">
+                <label>Amount: </label>
+                <input class="input" id="bet" inputMode="numeric" pattern="[0-9]*">
+            </div>
+        </form>
+        <div class="button_container">
+            <button id="win">Win</button>
+            <button id="lose">Lose</button>
+        </div>       
+    </div>
+         
+    
+    
+
+    <script src="index.js"></script>
+</body>
+</html>
