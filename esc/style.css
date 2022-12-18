@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=PT+Serif+Caption&family=Poppins:wght@200;300&family=Rubik+Distressed&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-family: Poppins, sans-serif;
+}
+.input {
+    font-size: 1rem;
+    
+    width: 3rem;
+    height: 1.5rem;
+    border: none;
+    border-bottom: 1px solid black;
+    font-weight: 100;
+}
+
+.container {
+    border: 2px dashed black;
+    width: 18rem;
+    height: 25rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    box-shadow: 10px 10px;
+}
+
+
+.pattern_para {
+    font-size: 1rem;
+}
+#pattern {
+    width: 14rem;
+    height: 1.5rem;
+}
+button {
+    width: 5rem;
+    height: 2rem;
+    font-size: large;
+}
+
+button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(1.05);
+    
+}
+
+#win {
+    background-color: antiquewhite;
+    color: black;
+}
+#lose {
+    color: white;
+    background-color: rgb(226, 81, 81);
+}
+
+#win:hover {
+    background-color: rgba(250, 235, 215, 0.8);
+    color: black;
+}
+#lose:hover {
+    color: white;
+    background-color: rgba(226, 81, 81, 0.8);
+}
+
+.button_container {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    width: 75%;
+}
+
+
+input, label {
+    display: block;
+
+}
+
+label {
+    font-size: medium;
+    
+}
+form {
+    width: 100%;
+}
+
+.sup_container {
+    display: block;
+}
+.rs_container {
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+.rs {
+    margin-top: 1rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgb(172, 255, 47);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {  
+    body,html {
+        width: 80vw;
+        margin: 10%;
+        max-height: 90vh;
+        min-height: 90vh;
+    }
+    
+}
