@@ -103,6 +103,26 @@ form {
     width: 100%;
 }
 
+.sup_container {
+    display: block;
+}
+.rs_container {
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+.rs {
+    margin-top: 1rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgb(172, 255, 47);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+}
+
+
 @media only screen and (max-width: 600px) {  
     body,html {
         width: 80vw;

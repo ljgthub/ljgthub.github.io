@@ -121,3 +121,14 @@ lose.addEventListener("click", function lose() {
     //amount output: 
     bet.value = sum + arr[0]
 })
+
+reset.addEventListener("click", function reset() {
+
+    arr = [target]
+    sum = target
+    
+    obj()
+    renderSum()
+    patternFunc()
+    
+})
