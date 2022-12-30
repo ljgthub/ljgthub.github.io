@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albion Artifact Calculator</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+
+    
+<div id="hamb_container">
+        
+    <h1>Artifacts Profit Calculator</h1>
+        
+    <div id="hamb" class="hamb" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>    
+</div>
+
+    
+
+    
+    <div class="cont">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    
+
+    <label for="spent">Spent: </label>
+    
+    <input class="number" id="spent" autocomplete="off">
+    <br>
+    <label for="est">Estimated Market Value: </label>
+    
+    <input class="number" id="est" autocomplete="off" onkeyup="
+    
+    let convert = parseInt(est.value.replace(/,/g, '')) - parseInt(spent.value.replace(/,/g, '')); 
+    if (convert < 0) {
+                est_output.style.color = 'red';
+            } else {
+                est_output.style.color = 'green';
+            }
+
+    est_output.value = convert.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            
+    ">
+    <br>
+    <label for="sales">Sale: </label>
+    
+    <input class="number" id="sales" autocomplete="off">
+    <br>
+    <label for="total">Total Sales: </label>
+    
+    <input id="total" autocomplete="off">
+    <br>
+    
+    <label>Est. Profit: </label><output id="est_output"></output>
+    <br>
+    <label>Total Profit: </label><output id="output"></output>
+    <br>
+    <button id="done">Done</button>
+    
+    </div>
+
+    
+    <div id="nav">
+        
+        
+        <p id="total_profit"> </p>
+        
+        <h3>History: </h3>
+        
+        <p id="historyf">
+           
+        </p>
+        
+    </div>
+    
+
+
+    
+    
+    <script>
+
+            if (total.value) {
+                done.style.visibility = "visible"
+            } else {
+                done.style.visibility = "hidden"
+            }
+
+
+            historyf.innerHTML = localStorage.getItem("history")
+                
+            if (localStorage.getItem("holder") && localStorage.getItem("est")) {
+
+            
+              
+            
+                
+                let g = JSON.parse(localStorage.getItem("holder"))
+
+                let o = JSON.parse(localStorage.getItem("est").replace(/,/g, ''))
+                total_profit.innerHTML = `
+                <label>est. Profit</label>: <span id="profitSpan">${o.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                <br>
+                <label>Total Profit</label>: <span id="profitSpan2">${g.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                
+                `
+
+                if (g < 0) {
+                    profitSpan.style.color = 'red';
+                    profitSpan.style.fontWeight = "600";
+                    profitSpan2.style.color = 'red';
+                    profitSpan2.style.fontWeight = "600";
+                } else {
+                    profitSpan.style.color = 'green';
+                    profitSpan.style.fontWeight = "600";
+                    profitSpan2.style.color = 'green';
+                    profitSpan2.style.fontWeight = "600";
+                }
+            
+
+            } else {
+                total_profit.innerHTML = `
+                <label>est. Total Profit</label>:
+                <br>
+                <label>Total Profit</label>:
+
+                `
+
+            }
+                
+            
+
+            
+            
+
+        $('input.number').val(function(index, value) {
+            return value
+            .replace(/\D/g, "")
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            ;
+        }).keyup(function(event) {
+            // skip for arrow keys
+            if(event.which >= 37 && event.which <= 40) return;
+            // format number
+            $(this).val(function(index, value) {
+                return value
+                .replace(/\D/g, "")
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                ;
+            });
+        });
+
+        
+        let sum
+        let output4;
+        
+
+        //Function when Enter is pressed
+    sales.addEventListener("keydown", (e) => {
+
+        
+
+        if (e.key === 'Enter') {
+
+                
+    let sales = document.getElementById("sales")
+
+    let hold = parseInt(sales.value.replace(/,/g, ''));
+
+
+    let total = document.getElementById("total")
+
+    if (total.value) {
+    var totalConvert = parseInt(total.value.replace(/,/g, ''));
+    } else {
+        totalConvert = 0
+    }
+
+    sum = totalConvert + hold
+
+    console.log(sum)
+    let spent4 = parseInt(spent.value.replace(/,/g, ''));
+    output4 = sum - spent4
+
+    total.value = sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+
+    console.log(total.value)
+    if (output4 < 0) {
+        document.getElementById("output").style.color = "red";
+    } else {
+        document.getElementById("output").style.color = "green";
+    }
+
+    output.value = output4.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+
+    sales.value = ""
+
+
+    if (total.value) {
+                done.style.visibility = "visible"
+            } else {
+                done.style.visibility = "hidden"
+            }
+
+
+    }
+    
+
+    })
+
+
+    //Done button
+
+        
+        
+        done.addEventListener("dblclick", () => {
+            
+            
+            let historyString = ` 
+            <span class="h_label">Spent</span>: ${spent.value}
+            <br>
+            <span class="h_label">est. Market Value</span>: ${est.value}
+            <br>
+            <span class="h_label">Total Sales</span>: ${total.value}
+            <br>
+            <span class="h_label">est. Profit</span>: ${est_output.value}
+            <br>
+            <span class="h_label">Real Profit</span>: ${output.value}
+            <br>
+            <br>
+            `
+
+            if (localStorage.getItem("history")) {
+                let x = localStorage.getItem("history")
+                let z = x + historyString
+                localStorage.setItem("history", z)
+
+                
+            } else {
+                localStorage.setItem("history", historyString)
+                
+                
+            }
+            
+            
+            let f = parseInt(est_output.value.replace(/,/g, ''))
+
+            
+
+            if (localStorage.getItem("holder")) {
+                let x = JSON.parse(localStorage.getItem("holder")) 
+                let z = x + output4
+                localStorage.setItem("holder", z)
+                let j = JSON.parse(localStorage.getItem("est").replace(/,/g, ''))
+                let h = j + f
+                localStorage.setItem("est", h)
+            } else {
+                localStorage.setItem("holder", output4)
+                localStorage.setItem("est", est_output.value)
+            }
+            
+            
+            
+            
+            location.reload()
+        })
+
+
+        function myFunction(x) {
+            x.classList.toggle("change");
+            
+            if (nav.style.width == "300px") {
+            
+            hamb.className = "hamb"
+            nav.style.width = "0px"
+            nav.style.overflow = "hidden"
+            }
+            else {
+            nav.style.width = "300px"
+            hamb.className = hamb.className + " move"
+            nav.style.overflow = "auto"
+            }
+        }
+
+    </script>
+</body>
+</html>
