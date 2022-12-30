@@ -268,9 +268,62 @@
             }
             
             
+            if (total.value) {
+                done.style.visibility = "visible"
+            } else {
+                done.style.visibility = "hidden"
+            }
+
+
+            historyf.innerHTML = localStorage.getItem("history")
+                
+            if (localStorage.getItem("holder") && localStorage.getItem("est")) {
+
             
+              
             
-            location.reload()
+                
+                let g = JSON.parse(localStorage.getItem("holder"))
+
+                let o = JSON.parse(localStorage.getItem("est").replace(/,/g, ''))
+                total_profit.innerHTML = `
+                <label>est. Profit</label>: <span id="profitSpan">${o.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                <br>
+                <label>Total Profit</label>: <span id="profitSpan2">${g.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                
+                `
+
+                if (g < 0) {
+                    profitSpan.style.color = 'red';
+                    profitSpan.style.fontWeight = "600";
+                    profitSpan2.style.color = 'red';
+                    profitSpan2.style.fontWeight = "600";
+                } else {
+                    profitSpan.style.color = 'green';
+                    profitSpan.style.fontWeight = "600";
+                    profitSpan2.style.color = 'green';
+                    profitSpan2.style.fontWeight = "600";
+                }
+            
+
+            } else {
+                total_profit.innerHTML = `
+                <label>est. Total Profit</label>:
+                <br>
+                <label>Total Profit</label>:
+
+                `
+
+            }
+            
+            spent.value = ""
+            est.value = ""
+            sales.value = ""
+            total.value = ""
+            est_output.value = ""
+            output.value = ""
+            sum = 0
+            output4 = 0
         })
 
 
