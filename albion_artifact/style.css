@@ -151,3 +151,18 @@ h1 {
 .h_label {
     font-weight: 100;
 }
+
+select, option {
+    background-color: #3b504c;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+select:hover, option:hover, option:focus, select:focus{
+    cursor: pointer;
+    background-color: #3b504c;
+}
+
+.c_label {
+    font-weight: 200;
+}

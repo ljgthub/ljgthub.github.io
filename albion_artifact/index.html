@@ -29,13 +29,17 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
-    
+    <select id="select_Ingredient">
+        <option value="Rune">Rune</option>
+        <option value="Soul">Soul</option>
+        <option value="Relic">Relic</option>
+    </select>
 
     <label for="spent">Spent: </label>
     
     <input class="number" id="spent" autocomplete="off">
     <br>
-    <label for="est">Estimated Market Value: </label>
+    <label for="est">Est. Market Value: </label>
     
     <input class="number" id="est" autocomplete="off" onkeyup="
     
@@ -86,7 +90,7 @@
     
     
     <script>
-
+            
             if (total.value) {
                 done.style.visibility = "visible"
             } else {
@@ -225,6 +229,8 @@
             
             
             let historyString = ` 
+            <span class="c_label">${select_Ingredient.value}</span>
+            <br>
             <span class="h_label">Spent</span>: ${spent.value}
             <br>
             <span class="h_label">est. Market Value</span>: ${est.value}
