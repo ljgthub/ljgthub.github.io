@@ -59,6 +59,31 @@ let itemInfo = {
     ing2: +localStorage.getItem("Olde Seed")
 }
 
+if (!itemInfo.block) {
+
+localStorage.setItem("Music Box", 2)
+itemInfo.block = localStorage.getItem("Music Box")
+} 
+
+if (!itemInfo.seed) {
+
+localStorage.setItem("Music Box Seed", 1)
+itemInfo.seed = localStorage.getItem("Music Box Seed")
+}
+
+if (!itemInfo.ing1) {
+
+localStorage.setItem("Ducky Seed", 2)
+itemInfo.ing1 = +localStorage.getItem("Ducky Seed")
+}
+
+if (!itemInfo.ing2) {
+
+localStorage.setItem("Olde Seed", 6)
+itemInfo.ing2 = +localStorage.getItem("Olde Seed")
+}
+
+
 inner1.innerHTML = "Ducky Seed: "
 inner2.innerHTML = "Olde Seed: "
 

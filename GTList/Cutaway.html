@@ -58,6 +58,31 @@ let itemInfo = {
     ing2: +localStorage.getItem("Tenement Building Seed")
 }
 
+if (!itemInfo.block) {
+
+localStorage.setItem("Cutaway", 40)
+itemInfo.block = localStorage.getItem("Cutaway")
+} 
+
+if (!itemInfo.seed) {
+
+localStorage.setItem("Cutaway Seed", 12)
+itemInfo.seed = localStorage.getItem("Cutaway Seed")
+}
+
+if (!itemInfo.ing1) {
+
+localStorage.setItem("Western Building Seed", 30)
+itemInfo.ing1 = +localStorage.getItem("Western Building Seed")
+}
+
+if (!itemInfo.ing2) {
+
+localStorage.setItem("Tenement Building Seed", 30)
+itemInfo.ing2 = +localStorage.getItem("Tenement Building Seed")
+}
+
+
 inner1.innerHTML = "Western Building Seed: "
 inner2.innerHTML = "Tenement Building Seed: "
 

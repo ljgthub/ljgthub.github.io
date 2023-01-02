@@ -48,6 +48,11 @@ document.getElementById("info");
 
 
 
+
+
+
+
+
 //Display Box
 let itemInfo = {    
     farmable: "No",
@@ -58,6 +63,36 @@ let itemInfo = {
     ing1: +localStorage.getItem("Portcullis Seed"),
     ing2: +localStorage.getItem("Venus Seed")
 }
+
+
+
+if (!itemInfo.block) {
+
+localStorage.setItem("Dragon Gate", 11)
+itemInfo.block = localStorage.getItem("Dragon Gate")
+} 
+
+if (!itemInfo.seed) {
+
+localStorage.setItem("Dragon Gate Seed", 5)
+itemInfo.seed = localStorage.getItem("Dragon Gate Seed")
+}
+
+if (!itemInfo.ing1) {
+
+localStorage.setItem("Portcullis Seed", 10)
+itemInfo.ing1 = +localStorage.getItem("Portcullis Seed")
+}
+
+if (!itemInfo.ing2) {
+
+localStorage.setItem("Venus Seed", 11)
+itemInfo.ing2 = +localStorage.getItem("Venus Seed")
+}
+
+
+
+
 
 inner1.innerHTML = "Portcullis Seed: "
 inner2.innerHTML = "Venus Seed: "

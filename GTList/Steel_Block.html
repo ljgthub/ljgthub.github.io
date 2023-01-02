@@ -58,6 +58,31 @@ let itemInfo = {
     ing2: +localStorage.getItem("Purple Block Seed")
 }
 
+if (!itemInfo.block) {
+
+localStorage.setItem("Steel Block", 10)
+itemInfo.block = localStorage.getItem("Steel Block")
+} 
+
+if (!itemInfo.seed) {
+
+localStorage.setItem("Steel Block Seed", 4)
+itemInfo.seed = localStorage.getItem("Steel Block Seed")
+}
+
+if (!itemInfo.ing1) {
+
+localStorage.setItem("Portcullis Seed", 10)
+itemInfo.ing1 = +localStorage.getItem("Portcullis Seed")
+}
+
+if (!itemInfo.ing2) {
+
+localStorage.setItem("Purple Block Seed", 10)
+itemInfo.ing2 = +localStorage.getItem("Purple Block Seed")
+}
+
+
 inner1.innerHTML = "Portcullis Seed: "
 inner2.innerHTML = "Purple Block Seed: "
 

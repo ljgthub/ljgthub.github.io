@@ -47,6 +47,11 @@ document.getElementById("itemOutput");
 document.getElementById("info");
 
 
+
+
+
+
+
 //Display Box
 let itemInfo = {    
     fuel: "Yes",
@@ -57,6 +62,33 @@ let itemInfo = {
     ing1: +localStorage.getItem("Display Box Seed"),
     ing2: +localStorage.getItem("Pastel Purple Seed")
 }
+
+
+if (!itemInfo.block) {
+
+localStorage.setItem("Donation Box", 2)
+itemInfo.block = localStorage.getItem("Donation Box")
+} 
+
+if (!itemInfo.seed) {
+
+localStorage.setItem("Donation Box Seed", 1)
+itemInfo.seed = localStorage.getItem("Donation Box Seed")
+}
+
+if (!itemInfo.ing1) {
+
+localStorage.setItem("Display Box Seed", 2)
+itemInfo.ing1 = +localStorage.getItem("Display Box Seed")
+}
+
+if (!itemInfo.ing2) {
+
+localStorage.setItem("Pastel Purple Seed", 6)
+itemInfo.ing2 = +localStorage.getItem("Pastel Purple Seed")
+}
+
+
 
 inner1.innerHTML = "Display Box Seed: "
 inner2.innerHTML = "Pastel Purple Seed: "
@@ -149,7 +181,13 @@ localStorage.setItem("Donation Box Seed", itemInfoSeed.value)
 localStorage.setItem("Display Box Seed", ing1.value)
 localStorage.setItem("Pastel Purple Seed", ing2.value)
 
+
+
+
+
 window.location.reload();
+
+
 
 
 })

@@ -58,6 +58,31 @@ let itemInfo = {
     ing2: +localStorage.getItem("Cuzco Wall Seed")
 }
 
+if (!itemInfo.block) {
+
+localStorage.setItem("Roulette Wheel", 9)
+itemInfo.block = localStorage.getItem("Roulette Wheel")
+} 
+
+if (!itemInfo.seed) {
+
+localStorage.setItem("Roulette Wheel Seed", 4)
+itemInfo.seed = localStorage.getItem("Roulette Wheel Seed")
+}
+
+if (!itemInfo.ing1) {
+
+localStorage.setItem("Card Block Seed", 4)
+itemInfo.ing1 = +localStorage.getItem("Card Block Seed")
+}
+
+if (!itemInfo.ing2) {
+
+localStorage.setItem("Cuzco Wall Seed", 80)
+itemInfo.ing2 = +localStorage.getItem("Cuzco Wall Seed")
+}
+
+
 inner1.innerHTML = "Card Block Seed: "
 inner2.innerHTML = "Cuzco Wall Seed: "
 

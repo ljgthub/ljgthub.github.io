@@ -58,6 +58,31 @@ let itemInfo = {
     ing2: +localStorage.getItem("Steam Tubes Seed")
 }
 
+if (!itemInfo.block) {
+
+localStorage.setItem("Steam Revolver", 5)
+itemInfo.block = localStorage.getItem("Steam Revolver")
+} 
+
+if (!itemInfo.seed) {
+
+localStorage.setItem("Steam Revolver Seed", 2)
+itemInfo.seed = localStorage.getItem("Steam Revolver Seed")
+}
+
+if (!itemInfo.ing1) {
+
+localStorage.setItem("Roulette Wheel Seed", 4)
+itemInfo.ing1 = +localStorage.getItem("Roulette Wheel Seed")
+}
+
+if (!itemInfo.ing2) {
+
+localStorage.setItem("Steam Tubes Seed", 7)
+itemInfo.ing2 = +localStorage.getItem("Steam Tubes Seed")
+}
+
+
 inner1.innerHTML = "Roulette Wheel Seed: "
 inner2.innerHTML = "Steam Tubes Seed: "
 

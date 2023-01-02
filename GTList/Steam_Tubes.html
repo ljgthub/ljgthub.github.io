@@ -58,6 +58,31 @@ let itemInfo = {
     ing2: +localStorage.getItem("Mission Block Seed")
 }
 
+if (!itemInfo.block) {
+
+localStorage.setItem("Steam Tubes", "20-25")
+itemInfo.block = localStorage.getItem("Steam Tubes")
+} 
+
+if (!itemInfo.seed) {
+
+localStorage.setItem("Steam Tubes Seed", 7)
+itemInfo.seed = localStorage.getItem("Steam Tubes Seed")
+}
+
+if (!itemInfo.ing1) {
+
+localStorage.setItem("Filigreed Jade Seed", 5)
+itemInfo.ing1 = +localStorage.getItem("Filigreed Jade Seed")
+}
+
+if (!itemInfo.ing2) {
+
+localStorage.setItem("Mission Block Seed", 5)
+itemInfo.ing2 = +localStorage.getItem("Mission Block Seed")
+}
+
+
 inner1.innerHTML = "Filigreed Jade Seed: "
 inner2.innerHTML = "Mission Block Seed: "
 

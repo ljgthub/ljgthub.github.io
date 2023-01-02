@@ -40,12 +40,10 @@
     </div>
 <script> 
 
-
 document.getElementById("ing1");
 document.getElementById("ing2");
 document.getElementById("itemOutput");
 document.getElementById("info");
-
 
 //Display Box
 let itemInfo = {    
@@ -57,6 +55,31 @@ let itemInfo = {
     ing1: +localStorage.getItem("Neon Lights Seed"),
     ing2: +localStorage.getItem("Cutaway Seed")
 }
+
+if (!itemInfo.block) {
+
+localStorage.setItem("Glowy Block", 9)
+itemInfo.block = localStorage.getItem("Glowy Block")
+} 
+
+if (!itemInfo.seed) {
+
+localStorage.setItem("Glowy Block Seed", 4)
+itemInfo.seed = localStorage.getItem("Glowy Block Seed")
+}
+
+if (!itemInfo.ing1) {
+
+localStorage.setItem("Neon Lights Seed", 6)
+itemInfo.ing1 = +localStorage.getItem("Neon Lights Seed")
+}
+
+if (!itemInfo.ing2) {
+
+localStorage.setItem("Cutaway Seed", 12)
+itemInfo.ing2 = +localStorage.getItem("Cutaway Seed")
+}
+
 
 inner1.innerHTML = "Neon Lights Seed: "
 inner2.innerHTML = "Cutaway Seed: "
