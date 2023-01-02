@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100&family=PT+Serif+Caption&family=Poppins:wght@100;300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Distressed&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    margin: 2rem;
+    font-size: 1.5rem;
+    background-color: #062629;
+    color: #DFF6FF;
+    justify-content: center;
+}
+
+
+input {
+    border: none;
+    
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: #DFF6FF;
+    min-width: 1ch;
+}
+
+li {
+    list-style: none;
+    color: #DFF6FF;
+}
+a:hover {
+    font-size: 1.6rem;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+
+a:visited {
+    color: #DFF6FF;
+    text-decoration: none;
+}
+
+.wl {
+    font-size: 1rem;
+    font-style: italic;
+}
+
+output {
+    font-weight: bold;
+    
+}
+
+button {
+    display: flex;    
+    margin: auto;
+    background: radial-gradient(#0a4a50, #062629);
+    font-size: 2rem;
+    color: #DFF6FF;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 5px;
+    display: inline;
+    margin-right: 25px;
+}
+
+button:hover {
+    background: #062629;
+    color: linear-gradient(300deg, #0b393d, #062629);
+    cursor: pointer;
+
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.cont {
+    border-radius: 20px;
+    padding: 2rem;
+    background: rgb(17,49,51);
+    background: linear-gradient(157deg, rgba(17,49,51,1) 0%, rgba(29,81,84,1) 100%);
+    border: none;
+    padding-right: 0;
+    line-height: 50px;
+    margin: auto;
+    
+}
+
+.header {
+    background-color: #102c2e;
+    width: calc(100% + 2rem);
+    
+    padding-left: 1.9rem;
+    margin: 0 -2rem;
+    margin-top: 1rem;
+}
+h1 {
+    display: inline;
+}
+
+
+/*Color for Labels*/
+p {
+    color: rgb(188, 208, 224);
+    font-weight: 300;
+}
+
+a:visited, a {
+    color: rgb(188, 208, 224);
+    font-weight: 300;
+}
+
+label {
+    color: rgb(188, 208, 224);
+    font-weight: 300;
+}
+.infoSpan {
+    color: #DFF6FF;
+    font-weight: bold;
+}
+.price {
+    color: rgb(188, 208, 224);
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0.5rem 1rem;
+    }
+
+    input, a, p, li, output, label, span {
+      font-size: 1rem;
+    }
+
+    .wl {
+        font-size: 0.8rem;
+    }
+
+    .cont {
+        max-height: 90%;
+        line-height: 40px;
+    }
+  }

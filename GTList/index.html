@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Item List</h1>
+    
+    <form>
+        
+        <select onclick="myFunction()" onmouseover="myFunction()" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+            <option value='' class="first">Blocks...</option>
+            <option value='Cutaway.html'>Cutaway Block</option>
+            <option value='Display_Box.html'>Display Box</option>
+            <option value='Display_Block.html'>Display Block</option>
+            <option value='Donation_Box.html'>Donation Box</option>
+            <option value='Glowy_Block.html'>Glowy Block</option>
+            <option value='Music_Box.html'>Music Box</option>
+            <option value='Steel_Block.html'>Steel Block</option>
+        </select>
+        <br>
+        
+
+        <select onclick="myFunction()" onmouseover="myFunction()" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+            <option value='' class="first">Doors...</option>
+            <option value='Dragon_Gate.html'>Dragon Gate</option>
+            <option value='http://www.yahoo.com'>Yahoo</option>
+        </select>
+        <br>
+
+
+        <select onclick="myFunction()" onmouseover="myFunction()" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+            <option value='' class="first">Signs...</option>
+            <option value='http://www.google.com'>Google</option>
+            <option value='http://www.yahoo.com'>Yahoo</option>
+        </select>
+        <br>
+
+
+        <select onclick="myFunction()" onmouseover="myFunction()" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+            <option value='' class="first">Steams...</option>
+            <option value='Steam_Revolver.html'>Steam Revolver</option>
+            <option value='Steam_Tubes.html'>Steam Tubes</option>
+        </select>
+        <br>
+
+
+        <select onclick="myFunction()" onmouseover="myFunction()" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+            <option value='' class="first">Misc...</option>
+            <option value='Roulette_Wheel.html'>Roulette Wheel</option>
+            <option value='http://www.yahoo.com'>Yahoo</option>
+        </select>
+        <br>
+        
+       
+    </form>
+
+    <script>
+        function myFunction() {
+  var x = document.getElementsByClassName("first");
+  
+  for (let i = 0; i < x.length; i++) {
+
+    x[i].style.display = "none";
+}
+}
+       </script>
+</body>
+</html>

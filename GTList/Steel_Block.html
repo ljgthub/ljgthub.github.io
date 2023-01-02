@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Block</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="cont">
+    <h1>Steel Block</h1> 
+    
+
+
+    <br>
+    <span class="price">Block: </span> <input id="itemInfoBlock">/1<span class="wl"> WL</span>
+    <br>
+    <span class="price">Seed: </span> <input id="itemInfoSeed">/1<span class="wl"> WL</span>
+
+
+    <div class="header"><h3>Info: </h3></div>
+    <p id="info">
+      
+    </p>
+    <p id="trees"></p>
+    <button id="splice">Splice</button>
+    <section>
+        <div class="header"><h3>Recipe: </h3></div>
+        <ul>
+          <li><a href="" id="inner1"></a> <input id="ing1" >/1<span class="wl"> WL</span></li>
+          <li><a href="" id="inner2"></a> <input id="ing2" >/1<span class="wl"> WL</span></li>
+          
+        </ul>
+      </section>
+      <label>Seed Price if Spliced: </label><output id="itemOutput"></output>
+      <br>
+      <button onclick="location.href='index.html'">Back</button><button id="update">Update</button>
+    </div>
+<script> 
+
+
+document.getElementById("ing1");
+document.getElementById("ing2");
+document.getElementById("itemOutput");
+document.getElementById("info");
+
+
+
+//Display Box
+let itemInfo = {    
+    farmable: "Yes",
+    fuel: "Yes",
+    blockPerTrees: 3.75,
+    block: localStorage.getItem("Steel Block"),
+    seed: localStorage.getItem("Steel Block Seed"),
+    ing1: +localStorage.getItem("Portcullis Seed"),
+    ing2: +localStorage.getItem("Purple Block Seed")
+}
+
+inner1.innerHTML = "Portcullis Seed: "
+inner2.innerHTML = "Purple Block Seed: "
+
+/*  MusicBox = 
+{    
+    farmable: "No",
+    fuel: "Yes",
+    block Per Trees: 2.5,
+    block: 2-3/1,
+    seed: 1/1,
+    Portcullis Seed: 2/1,
+    Purple Block Seed: 4/1
+} 
+*/
+
+
+//Display Info
+info.innerHTML = `
+Fuel: <span class="infoSpan">${itemInfo.fuel}</span>
+<br>
+Farmable: <span class="infoSpan">${itemInfo.farmable}</span>
+<br>
+Average Blocks per Tree: <span class="infoSpan">${itemInfo.blockPerTrees}</span>
+<br>
+`
+
+//Declaring Value to Input Element
+itemInfoBlock.value = itemInfo.block
+itemInfoSeed.value = itemInfo.seed
+ing1.value = itemInfo.ing1;
+ing2.value = itemInfo.ing2;
+
+var inputs = document.querySelectorAll('input'); //getting All input Element
+
+inputs.forEach(input => {
+  input.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
+  resizeInput.call(input); // immediately call the function
+});
+
+function resizeInput() {
+  this.style.width = this.value.length + "ch";
+}
+
+//Output
+sum = itemInfo.ing2 / ((itemInfo.ing1 + itemInfo.ing2) / itemInfo.ing1);
+itemOutput.value = sum.toFixed(2);
+
+if (Number.isInteger(sum)) {
+    itemOutput.value = sum.toFixed(0);
+}
+
+trees.innerHTML = `
+    <span class="wl">splice</span> Blocks per 1 <span class="wl">WL</span> w/o Harvester: <span class="infoSpan">${(sum * itemInfo.blockPerTrees).toFixed(2)}</span>
+    <br>
+    <span class="wl">splice</span> Blocks per 1 <span class="wl">WL</span> w/ Harvester: <span class="infoSpan">${((sum * itemInfo.blockPerTrees) * 1.1).toFixed(2)}</span>
+    `
+    
+splice.addEventListener('click', () => {
+    if (trees.innerHTML === `
+    <span class="wl">splice</span> Blocks per 1 <span class="wl">WL</span> w/o Harvester: <span class="infoSpan">${(sum * itemInfo.blockPerTrees).toFixed(2)}</span>
+    <br>
+    <span class="wl">splice</span> Blocks per 1 <span class="wl">WL</span> w/ Harvester: <span class="infoSpan">${((sum * itemInfo.blockPerTrees) * 1.1).toFixed(2)}</span>
+    `) {
+       
+        trees.innerHTML = `
+    Blocks per 1 <span class="wl">WL</span> w/o Harvester: <span class="infoSpan">${(+itemInfo.seed * itemInfo.blockPerTrees).toFixed(2)}</span>
+    <br>
+    Blocks per 1 <span class="wl">WL</span> w/ Harvester: <span class="infoSpan">${((+itemInfo.seed * itemInfo.blockPerTrees) * 1.1).toFixed(2)}</span>
+    `
+    }
+    
+    else {
+        trees.innerHTML = `
+    <span class="wl">splice</span> Blocks per 1 <span class="wl">WL</span> w/o Harvester: <span class="infoSpan">${(sum * itemInfo.blockPerTrees).toFixed(2)}</span>
+    <br>
+    <span class="wl">splice</span> Blocks per 1 <span class="wl">WL</span> w/ Harvester: <span class="infoSpan">${((sum * itemInfo.blockPerTrees) * 1.1).toFixed(2)}</span>
+    `
+    }
+})
+
+//Update
+update.addEventListener("click", function () {
+
+
+localStorage.setItem("Steel Block", itemInfoBlock.value)
+localStorage.setItem("Steel Block Seed", itemInfoSeed.value)
+localStorage.setItem("Portcullis Seed", ing1.value)
+localStorage.setItem("Purple Block Seed", ing2.value)
+
+window.location.reload();
+
+
+})
+
+
+
+</script>
+</body>
+</html>
