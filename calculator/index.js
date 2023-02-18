@@ -236,21 +236,21 @@ percent.addEventListener("click", function() {
 
     switch (operator) {
         case plus_button.innerText: 
-        display.value = `${firstN} + ${secN/100}`
+        display.value = `${firstN} + ${parseFloat(secN)/100}`
         break;
         case minus_button.innerText: 
-        display.value = `${firstN} - ${secN/100}`
+        display.value = `${firstN} - ${parseFloat(secN)/100}`
         break;
         case times_button.innerText: 
         console.log(secN)
-        display.value = `${firstN} ${times_button.innerText} ${secN/100} `
+        display.value = `${firstN} ${times_button.innerText} ${parseFloat(secN)/100} `
         break;
         case divide_button.innerText: 
-        display.value = `${firstN} ${divide_button.innerText} ${secN/100}`
+        display.value = `${firstN} ${divide_button.innerText} ${parseFloat(secN)/100}`
     }
 
     if (secN) {
-        secN = secN / 100
+        secN = parseFloat(secN) / 100
     }
     outputF()
 })
